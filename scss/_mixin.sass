@@ -1,0 +1,19 @@
+@import 'colors'
+
+@mixin backgroundImg($imgpath, $position: center center, $repeat: no-repeat, $size: contain)
+    background: 
+        image: url($imgpath)
+        position: $position
+        repeat: $repeat
+        size: $size
+    
+@mixin backgroundColor ($backGroundColor: $secondaryColor)
+    background: $backGroundColor
+
+
+@mixin flexBox($direction: row, $wrap: wrap, $justify-content: center, $align-items: center)
+    display: flex
+    flex-direction: $direction
+    flex-wrap: $wrap
+    justify-content: $justify-content
+    align-items: $align-items

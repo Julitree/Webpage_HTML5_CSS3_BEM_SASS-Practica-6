@@ -1,0 +1,359 @@
+@import  'colors'
+@import 'mediaQueries'
+@import 'mixin' 
+
+*
+    padding: 0
+    margin: 0
+a
+    text-decoration: none
+
+li
+    list-style: none
+
+
+body
+    background: $secondaryColor
+    font-family: 'Nunito', sans-serif
+    font-size: 1rem
+    font-weight: 400
+    line-height: 1.5rem
+    color: $secondaryColor
+
+
+.main-navbar
+    width: 100vw
+    background-color: $fifthColor
+    &__container
+        @include flexBox( $justify-content: space-between)
+        padding: 2% 4%
+    &__btn-wrapper-icon
+        @include media(tablet)
+            display: none
+    .navbar
+        display: none
+        @include media(tablet)
+            display: block
+        &__container
+            @include flexBox
+        &__item
+        &__link
+            color: $thirdColor
+            display: block
+            padding: 0 1.3rem
+            transition: color 0.5s ease
+            &:hover
+                color: $eighthColor
+            @include media(desktop)
+                padding: 0 1.8rem
+    .search-form
+            width: 50px
+            font-size: 16px
+            background-position: 10px 10px
+            display: none
+            @include media(tablet)
+                display: block
+            &__search 
+                width: 50px
+                background: url(../assets/img/search.svg) no-repeat left center
+                padding: .5em .6em
+                display: inline-block
+                border: none
+                box-sizing: border-box
+    &__bag-icon
+        color: $fourthColor
+        
+.header_info_wrapper
+    background-color: $sixColor
+    @include flexBox
+    padding: 2% 8%
+    .header_info
+        text-align: center
+        color: $fourthColor
+    a
+        color: $seventhColor
+
+.info-item
+    min-height: 350px
+    background: $primaryColor
+    color: $fourthColor
+    padding: 10% 10% 2% 
+    @include flexBox($direction: column)
+    &__title
+        font-size: 2.2rem
+        color: $secondaryColor
+        margin-bottom: 10px 
+        @include media(tablet)
+            font-size: 2.5rem
+        @include media(desktop)
+            font-size: 3rem
+    &__subtitle
+        display: block
+        color: $thirdColor
+        @include media(tablet)
+            font-size: 1.6rem
+            margin-top: 1%
+        @include media(desktop)
+            font-size: 2rem
+            margin-top: 3%
+    &__contents-wrapper
+        @include media(tablet)
+            display: flex
+    &__contents
+        color: $fourthColor
+        text-align: center
+        @include media(tablet)
+            font-size: 1.2rem
+            margin-top: 1%
+            &:nth-child(2)
+                margin: 0
+        @include media(desktop)
+            margin-top: 1%
+    &__links-wrapper
+        @include flexBox($justify-content: space-evenly)
+        width: 80%
+        margin-top: 3%
+        font-size: 20px
+    &__links
+            color: $seventhColor
+            padding-right: 10px
+            &::after
+                font-family: "Font Awesome 5 Free"
+                font-weight: 600
+                content: "\f054"
+                margin-left: 10px
+                font-size: 15px
+            @include media(desktop)
+                font-size: 1.5rem
+               
+    &__img
+        @include backgroundImg('../assets/img/iphone_1.png', $size: auto)
+        min-height: 600px
+        width: 100%
+        @include media(tablet)
+            @include backgroundImg('../assets/img/iphone_1_desktop.png', $size: contain)
+            min-height: 300px
+
+
+
+.promoSection
+    .info-item
+        background: $sixColor
+        padding: 10% 0 0
+        &__title, &__subtitle
+            color: $primaryColor
+        &__img
+            @include backgroundImg('../assets/img/iphone_2.jpeg', $position: center bottom)
+            min-height: 350px
+            @include media(tablet)
+                background-size: cover 
+                background-position-y: top
+            @include media(desktop)
+                background-position-y: center
+                min-height: 800px
+
+
+.infoSection
+    .info-item
+        &__img
+            @include backgroundImg('../assets/img/iphone_3.png', $position: center bottom)
+            min-height: 350px
+
+.grid-wrapper
+     @include media(tablet)
+        display: grid
+        grid-template-columns: 1fr 1fr
+
+
+.watchSection
+    background: $sixColor
+    .info-item
+        background: $sixColor
+        @include media(tablet)
+            min-height: 500px
+        &__title, &__subtitle
+            color: $primaryColor
+        &__links-wrapper
+            @include media(tablet)
+                font-size: 1rem
+        &__img
+            @include backgroundImg('../assets/img/watch.jpg')
+            min-height: 350px
+
+.macBookSection
+    .info-item
+        @include media(tablet)
+            min-height: 500px
+        &__links-wrapper
+            @include media(tablet)
+                font-size: 1rem
+        &__img
+            @include backgroundImg('../assets/img/macbook-pro.jpeg')
+            min-height: 300px
+
+.appleTV_section
+    .info-item
+        @include backgroundImg('../assets/img/appleTV.jpeg', $size: cover, $position: center center)
+        min-height: 700px
+        @include media(tablet)
+            min-height: 500px
+        &__links-wrapper
+            @include flexBox
+            margin: 50% auto
+        &__links
+                color: $sixColor
+                &::after
+                     content: "\f144"
+
+.reopenStoreSection
+    .info-item
+        background: $secondaryColor
+        @include media(tablet)
+            min-height: 500px
+        &__title 
+            font-size: 2rem 
+        &__title, &__subtitle
+            color: $primaryColor
+        &__img
+            @include backgroundImg('../assets/img/apple-logo.png')
+            min-height: 300px
+
+.nuevasAppSection
+    .info-item 
+        background: $seventhColor
+        padding: 5% 0 0
+        @include media(tablet)
+            min-height: 500px
+            padding-top: 10.7%
+        &__title
+            color: $secondaryColor
+            @include media(desktop)
+                margin-top: 4%
+        &__links-wrapper
+        &__links
+            color: $sixColor
+        @include media(desktop)
+            font-size: 1.3rem
+        &__img
+            @include backgroundImg('../assets/img/nuevasApp.png')
+            min-height: 400px
+            
+
+.videosApple
+    .info-item 
+        @include flexBox($direction: column, $justify-content: flex-end)
+        @include backgroundImg('../assets/img/videosDidacticos.png', $size: cover)
+        min-height: 700px
+        @include media(tablet)
+            min-height: 500px
+        &__links
+            color: $sixColor
+
+footer
+    background: $secondaryColor
+    color: $fourthColor
+    .footer
+        padding: 5% 10%
+        &__legal-information
+            @include flexBox
+            border-bottom: 1px solid $thirdColor
+            padding-bottom: 4%
+            li, p
+                margin-top: 5%
+                @include media(desktop)
+                    margin-top: 2%
+                a
+                    color: $fifthColor
+                    font-weight: bold
+        &__links
+            display: grid
+            grid-template-columns: 1fr
+            padding-top: 4%
+            @include media(tablet)
+                grid-template-columns: repeat(5,1fr)
+                grid-gap:20px
+                padding: 4% 0 14%
+            .footer-links__title
+                font-weight: bold
+                color: $fifthColor
+                border-bottom: 1px solid $thirdColor
+                padding: 2% 0
+                position: relative
+                &::before
+                    position: absolute
+                    content: "\f067"
+                    font-size: 13px
+                    font-family: "Font Awesome 5 Free"
+                    font-weight: 600
+                    top: 1%
+                    right: 2%
+                @include media(tablet)
+                    border: none
+                    font-size: 1rem
+                    &::before
+                        display: none
+                .footer-links__list
+                        display: none
+                        @include media(tablet)
+                            display: block
+                            font-size: 0.8rem
+                        a
+                            color: $fourthColor
+                            padding: 1% 0
+                            display: block
+                            &:hover
+                                color: $seventhColor
+            .menuShow
+                cursor: pointer
+                transition: all 0.5s ease
+                &:hover > .footer-links__list
+                    display: block
+        &__more-shoping-wrapper
+            padding-top: 4%
+            @include flexBox($justify-content: initial)
+            color: $fourthColor
+            font-size: 1rem
+            @include media(desktop)
+                border-bottom: 1px solid $thirdColor
+            a
+                color: $seventhColor
+        &__legal-wrapper
+            @include flexBox($justify-content: initial)
+        &__copy-container
+            @include media(tablet)
+                width: 100%
+                @include flexBox($justify-content: space-between)
+            .flag-wrapper
+                display: flex
+                align-items: center
+                padding: 2% 0
+                @include media(tablet)
+                    order: 2
+                >p
+                    margin-left: 3%
+                    @include media(tablet)
+                        order: 1
+        .legal-footer__content
+            ul
+                display: flex
+                flex-wrap: wrap
+                li
+                    display: flex
+                    padding: 5px 0
+                    align-content: center
+                    margin-top: 5%
+                    @include media(tablet)
+                        margin-top: 0
+                    &::after
+                        content: "|"
+                        padding: 0 10px
+                        color: $fourthColor
+                    @include media(tablet)
+                        padding: 0 23px
+                    a 
+                        display: block
+                        color: $fourthColor
+                        font-weight: bold
+                        @include media(tablet)
+                            font-size: 1rem
+                            
